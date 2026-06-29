@@ -1,9 +1,9 @@
-// ✅ Generic constraint
+//  Generic constraint
 export interface Identifiable {
   id: string;
 }
 
-// ✅ Generic class
+//  Generic class
 export class Repository<T extends Identifiable> {
   private store = new Map<string, T>();
 
@@ -20,7 +20,7 @@ export class Repository<T extends Identifiable> {
     return [...this.store.values()];
   }
 
-  // ✅ Partial + Omit utility types
+  //  Partial + Omit utility types
   update(id: string, changes: Partial<Omit<T, "id">>): T | undefined {
     const item = this.store.get(id);
     if (!item) return undefined;
@@ -33,7 +33,7 @@ export class Repository<T extends Identifiable> {
     return this.store.delete(id);
   }
 
-  // ✅ Keyof + generic indexed access
+  //  Keyof + generic indexed access
   findWhere<K extends keyof T>(key: K, value: T[K]): T[] {
     return this.findAll().filter((item) => item[key] === value);
   }
