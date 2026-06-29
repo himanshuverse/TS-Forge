@@ -1,17 +1,21 @@
 {
   "name": "ts-forge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A type-safe task management engine showcasing advanced TypeScript patterns — generics, discriminated unions, mapped types, and more.",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "ts-node --watch src/main.ts",
+    "clean": "rm -rf dist"
   },
-  "keywords": [],
+  "keywords": ["typescript", "task-manager", "generics", "type-safe"],
   "author": "",
-  "license": "ISC",
-    "devDependencies": {
-    "@types/node": "^26.0.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
 }
